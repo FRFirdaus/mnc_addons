@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="cprp_menu_parent" name="CPRP" sequence="1" action="cprp_report_action" groups="group_cprp_admin_user" web_icon="mnc_cprp,static/description/icon.png"/>
+    <menuitem id="report_menu" parent="cprp_menu_parent" sequence="10" action="cprp_report_action" groups="group_cprp_admin_user" name="Reports"/>
+    <menuitem id="advertise_menu" parent="cprp_menu_parent" sequence="20" action="cprp_advertise_action" groups="group_cprp_admin_user" name="Advertisement"/>
+    <menuitem id="agency_menu" parent="cprp_menu_parent" sequence="30" action="cprp_agency_action" groups="group_cprp_admin_user" name="Agencies"/>
+    <menuitem id="brand_menu" parent="cprp_menu_parent" sequence="40" action="cprp_brand_action" groups="group_cprp_admin_user" name="Brands"/>
+    <menuitem id="media_menu" parent="cprp_menu_parent" sequence="50" action="cprp_media_action" groups="group_cprp_admin_user" name="Media Order"/>
+</odoo>

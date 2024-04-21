@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="cprp_media_tree_view" model="ir.ui.view">
+        <field name="name">cprp_media_tree_view</field>
+        <field name="model">cprp.media.order</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="cprp_media_form_view" model="ir.ui.view">
+        <field name="name">cprp_media_form_view</field>
+        <field name="model">cprp.media.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="cprp_media_search_view" model="ir.ui.view">
+        <field name="name">cprp_media_search_view</field>
+        <field name="model">cprp.media.order</field>
+        <field name="arch" type="xml">
+            <search string="Search Media">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="cprp_media_action" model="ir.actions.act_window">
+        <field name="name">Media</field>
+        <field name="res_model">cprp.media.order</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

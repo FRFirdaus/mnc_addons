@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="cprp_report_tree_view" model="ir.ui.view">
+        <field name="name">cprp_report_tree_view</field>
+        <field name="model">cprp.report</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="report"/>
+                <field name="is_reported"/>
+                <field name="user_id"/>
+                <field name="advertise_id"/>
+                <field name="brand_id"/>
+                <field name="purchase_order_id"/>
+                <field name="media_order_id"/>
+                <field name="target_audience"/>
+                <field name="start_date"/>
+                <field name="to_date"/>
+                <field name="jam_tayang"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="cprp_report_form_view" model="ir.ui.view">
+        <field name="name">cprp_report_form_view</field>
+        <field name="model">cprp.report</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="date"/>
+                            <field name="report"/>
+                            <field name="is_reported"/>
+                            <field name="state"/>
+                        </group>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="planner_code"/>
+                            <field name="advertise_id"/>
+                            <field name="brand_id"/>
+                            <field name="purchase_order_id"/>
+                            <field name="media_order_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="General Information">
+                            <group>
+                                <group>
+                                    <field name="target_audience"/>
+                                    <field name="start_date"/>
+                                    <field name="to_date"/>
+                                    <field name="jam_tayang"/>
+                                    <field name="version_client"/>
+                                    <field name="version_internal"/>
+                                </group>
+                                <group>
+                                    <field name="duration"/>
+                                    <field name="budget_awal"/>
+                                    <field name="budget_additional"/>
+                                    <field name="budget_cancel"/>
+                                    <field name="budget_final"/>
+                                    <field name="level"/>
+                                    <field name="prime_time"/>
+                                    <field name="position_in_break"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Plans">
+                            <field name="plan_ids">
+                                <tree editable="bottom" default_order="name">
+                                    <field name="name"/>
+                                    <field name="grp" string="GRP"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Actual">
+                            <field name="actual_ids">
+                                <tree editable="bottom" default_order="name">
+                                    <field name="name"/>
+                                    <field name="grp" string="GRP"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="cprp_report_search_view" model="ir.ui.view">
+        <field name="name">cprp_report_search_view</field>
+        <field name="model">cprp.report</field>
+        <field name="arch" type="xml">
+            <search string="Search Report">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="report"/>
+                <field name="is_reported"/>
+                <field name="user_id"/>
+                <field name="advertise_id"/>
+                <field name="brand_id"/>
+                <field name="purchase_order_id"/>
+                <field name="media_order_id"/>
+                <field name="target_audience"/>
+                <field name="start_date"/>
+                <field name="to_date"/>
+                <field name="jam_tayang"/>
+                <field name="state"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="cprp_report_action" model="ir.actions.act_window">
+        <field name="name">Report</field>
+        <field name="res_model">cprp.report</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.module.category" id="cprp_groups">
+        <field name="name">CPRP Groups</field>
+        <field name="description">Access Right to CPRP data and configuration</field>
+    </record>
+
+    <!-- JNE Admin Groups -->
+    <record id="group_cprp_admin_user" model="res.groups">
+        <field name="name">Admin</field>
+        <field name="category_id" ref="cprp_groups"/>
+        <field name="comment">The user will have access to CRPR Report.</field>
+    </record>
+
+</odoo>
