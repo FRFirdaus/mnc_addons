@@ -27,6 +27,7 @@
         'views/brand_views.xml',
         'views/report_views.xml',
         'views/media_views.xml',
+        'views/media_purchase_views.xml',
         'views/menu_views.xml',
     ],
     # only loaded in demonstration mode

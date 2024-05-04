@@ -40,10 +40,10 @@
                         <group>
                             <field name="user_id"/>
                             <field name="planner_code"/>
-                            <field name="advertise_id"/>
+                            <field name="advertise_id" options="{'no_create_edit': 1, 'no_quick_create': 1}"/>
                             <field name="brand_id"/>
-                            <field name="purchase_order_id"/>
-                            <field name="media_order_id"/>
+                            <field name="purchase_order_id" options="{'no_create_edit': 1, 'no_quick_create': 1}"/>
+                            <field name="media_order_id" options="{'no_create_edit': 1, 'no_quick_create': 1}"/>
                         </group>
                     </group>
                     <notebook>

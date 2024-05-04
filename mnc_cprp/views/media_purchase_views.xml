@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="cprp_media_purchase_tree_view" model="ir.ui.view">
+        <field name="name">cprp_media_purchase_tree_view</field>
+        <field name="model">cprp.media.purchase</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="cprp_media_purchase_form_view" model="ir.ui.view">
+        <field name="name">cprp_media_purchase_form_view</field>
+        <field name="model">cprp.media.purchase</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Actual Ratings">
+                            <field name="actual_ids">
+                                <tree editable="bottom">
+                                    <field name="brand_id"/>
+                                    <field name="duration"/>
+                                    <field name="date"/>
+                                    <field name="start_time"/>
+                                    <field name="end_time"/>
+                                    <field name="week"/>
+                                    <field name="tvr"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="cprp_media_purchase_search_view" model="ir.ui.view">
+        <field name="name">cprp_media_purchase_search_view</field>
+        <field name="model">cprp.media.purchase</field>
+        <field name="arch" type="xml">
+            <search string="Search Media Purchase">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="cprp_media_purchase_action" model="ir.actions.act_window">
+        <field name="name">Media Purchase</field>
+        <field name="res_model">cprp.media.purchase</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

@@ -26,7 +26,7 @@ class CPRPReport(models.Model):
         ("PREMIUM", "Premium"),
         ("CANCEL", "Cancel")
     ])
-    purchase_order_id = fields.Many2one("purchase.order")
+    purchase_order_id = fields.Many2one("cprp.media.purchase")
     media_order_id = fields.Many2one("cprp.media.order")
     start_date = fields.Date(default=datetime.now().date())
     to_date = fields.Date(default=datetime.now().date())
@@ -58,6 +58,26 @@ class CPRPReport(models.Model):
                     rec.state or "None"
                 )
                 rec.name = format_string
+    
+    @api.onchange("purchase_order_id")
+    def _compute_actual_rating(self):
+        for rec in self:
+            if rec.purchase_order_id and rec.purchase_order_id.actual_ids:
+                rec.actual_ids = [(5, 0, 0)]
+                list_of_week = list(set([act.week for act in rec.purchase_order_id.actual_ids]))
+
+                list_of_actual_reports = []
+                for lst in list_of_week:
+                    actual_data_ids = rec.purchase_order_id.actual_ids.filtered(lambda act: act.week == lst)
+                    total_rating = sum([actdt.tvr for actdt in actual_data_ids])
+                    list_of_actual_reports.append((0, 0, {
+                        "name": "A%s" % (lst),
+                        "grp": total_rating
+                    }))
+                
+                rec.write({
+                    "actual_ids": list_of_actual_reports
+                })
 
 class CPRPReportPlan(models.Model):
     _name = "cprp.report.plan"
