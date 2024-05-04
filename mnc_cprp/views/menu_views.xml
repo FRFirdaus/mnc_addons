@@ -6,5 +6,5 @@
     <menuitem id="agency_menu" parent="cprp_menu_parent" sequence="30" action="cprp_agency_action" groups="group_cprp_admin_user" name="Agencies"/>
     <menuitem id="brand_menu" parent="cprp_menu_parent" sequence="40" action="cprp_brand_action" groups="group_cprp_admin_user" name="Brands"/>
     <menuitem id="media_menu" parent="cprp_menu_parent" sequence="50" action="cprp_media_action" groups="group_cprp_admin_user" name="Media Order"/>
-    <menuitem id="media_purchase_menu" parent="cprp_menu_parent" sequence="60" action="cprp_media_purchase_action" groups="group_cprp_admin_user" name="Purchase Order"/>
+    <menuitem id="media_purchase_menu" parent="cprp_menu_parent" sequence="60" action="cprp_media_purchase_action" groups="group_cprp_admin_user" name="Purchase and Actual"/>
 </odoo>

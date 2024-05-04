@@ -26,7 +26,7 @@ class CPRPReport(models.Model):
         ("PREMIUM", "Premium"),
         ("CANCEL", "Cancel")
     ])
-    purchase_order_id = fields.Many2one("cprp.media.purchase")
+    purchase_order_id = fields.Many2one("cprp.media.purchase", domain="[('brand_id', '=', brand_id)]")
     media_order_id = fields.Many2one("cprp.media.order")
     start_date = fields.Date(default=datetime.now().date())
     to_date = fields.Date(default=datetime.now().date())
